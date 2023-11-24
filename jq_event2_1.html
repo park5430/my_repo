@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+    // user_id_1 및 user_pw_1 요소에 포커스 이벤트 핸들러를 추가합니다.
+    $("#user_id_1, #user_pw_1").on("focus", function(){
+        // 포커스가 발생했을 때 요소의 배경색을 핑크(pink)로 변경합니다.
+        $(this).css({"background-color":"pink"});
+    });
+    // user_id_1 및 user_pw_1 요소에 포커스 아웃(blur) 이벤트 핸들러를 추가합니다.
+    $("#user_id_1, #user_pw_1").on("blur", function(){
+        // 포커스가 해제되었을 때 요소의 배경색을 기본 색(#fff)으로 변경합니다.
+        $(this).css({"background-color":"#fff"});
+    });
+    // frm_2 요소에 포커스 인(focusin) 이벤트 핸들러를 추가합니다.
+    $("#frm_2").on("focusin", function(){
+        // 포커스가 발생했을 때 요소의 배경색을 핑크(pink)로 변경합니다.
+        $(this).css({"background-color":"pink"});
+    });
+    // frm_2 요소에 포커스 아웃(focusout) 이벤트 핸들러를 추가합니다.
+    $("#frm_2").on("focusout", function(){
+        // 포커스가 해제되었을 때 요소의 배경색을 기본 색(#fff)으로 변경합니다.
+        $(this).css({"background-color":"#fff"});
+    });
+});
+
+// this는 jQuery에서 이벤트 핸들러 함수 내에서 현재 요소를 참조하는 데 사용되며, 이를 통해 이벤트가 발생한 요소를 동적으로 조작할 수 있습니다.
+
+// 포커스 이벤트 (focus):
+
+// 해당 요소 안에 포커스가 들어갈 때 이벤트 핸들러가 실행됩니다.
+// 주로 특정 요소에 포커스가 들어갔을 때 그 요소에 대한 동작을 정의하는데 사용됩니다.
+// 예를 들어, 텍스트 입력 필드에 포커스가 들어갔을 때 특정 스타일을 적용하거나 입력을 처리하는 등의 작업에 사용될 수 있습니다.
+// 포커스 인 이벤트 (focusin):
+
+// 해당 요소 안에 포커스가 들어갈 때 이벤트 핸들러가 실행됩니다.
+// 포커스 이벤트와 유사하게 작동하지만 포커스 이벤트와는 다르게 이벤트 버블링(bubbling)에 영향을 받습니다. 즉, 포커스 이벤트는 포커스를 가진 요소에만 적용되고, 포커스 인 이벤트는 그 부모 요소에도 적용됩니다.
+// 주로 중첩된 요소 또는 부모-자식 관계에 있는 요소에 대한 포커스 관련 동작을 처리할 때 사용됩니다.
+// 따라서 포커스 이벤트는 해당 요소에 포커스가 들어갈 때만 작동하며, 포커스 인 이벤트는 해당 요소와 그 부모 요소에 포커스가 들어갈 때 모두 작동합니다. 선택한 이벤트 유형은 필요한 동작과 상황에 따라 선택하면 됩니다.
+</script>
+</head>
+<body>
+<h1>focus / blur</h1>
+<form action="#">
+	<p>
+		<label for="user_id_1">ID</label>
+		<input type="text" 
+		name="user_id_1" id="user_id_1">
+	</p>
+	<p>
+		<label for="user_pw_1">PW</label>
+		<input type="password" 
+		name="user_pw_1" id="user_pw_1">
+	</p>
+</form>
+<h1>focusin / focusout</h1>
+<form action="#" id="frm_2">
+	<p>
+		<label for="user_id_2">ID</label>
+		<input type="text" 
+		name="user_id_2" id="user_id_2">
+	</p>
+	<p>
+		<label for="user_pw_2">PW</label>
+		<input type="password" 
+		name="user_pw_2" id="user_pw_2">
+	</p>
+</form>
+</body>
+
+</html>
