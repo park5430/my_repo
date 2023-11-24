@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+// 페이지가 로드될 때 실행되는 함수
+$(function(){
+	// id가 "btn1"인 요소를 선택하고, 데이터를 설정하고, 이벤트 핸들러를 등록합니다.
+	$("#btn1")
+	.data({"text":"javascript"}) // 데이터 속성에 "text"라는 키로 "javascript" 값을 저장합니다.
+	.on({
+		"mouseover": overFnc, // 마우스 오버 이벤트가 발생하면 overFnc 함수를 실행합니다.
+		"mouseout": outFnc // 마우스 아웃 이벤트가 발생하면 outFnc 함수를 실행합니다.
+	});
+	// id가 "btn2"인 요소를 선택하고, 데이터를 설정하고, 이벤트 핸들러를 등록합니다.
+	$("#btn2")
+	.data({"text":"welcome!"}) // 데이터 속성에 "text"라는 키로 "welcome!" 값을 저장합니다.
+	.on({
+		"mouseover focus": overFnc, // 마우스 오버 또는 포커스 이벤트가 발생하면 overFnc 함수를 실행합니다.
+		"mouseout blur": outFnc // 마우스 아웃 또는 블러 이벤트가 발생하면 outFnc 함수를 실행합니다.
+	});
+	// 마우스 오버 또는 포커스 이벤트가 발생할 때 실행되는 함수
+	function overFnc() {
+		// 클래스가 "txt"인 요소를 선택하고, 현재 요소의 데이터 속성인 "text" 값을 가져와서 텍스트로 설정합니다.
+		$(".txt").text($(this).data("text"));
+	}
+
+	// 마우스 아웃 또는 블러 이벤트가 발생할 때 실행되는 함수
+	function outFnc() {
+		// 클래스가 "txt"인 요소의 텍스트를 지웁니다.
+		$(".txt").text("");
+	}
+});
+
+</script>
+</head>
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt"></p>
+</body>
+</html>
