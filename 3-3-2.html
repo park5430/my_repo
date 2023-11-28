@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Selector Basic Page</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        /* 웹 페이지가 모두 준비되면 */
+        $(document).ready(function () {
+            /* 모든 태그의 border 속성에 5px solid black을 적용하는 함수 */
+            function applyBorder() {
+                $('*').css('border', '5px solid black');
+            }
+
+            /* 버튼을 클릭하면 applyBorder 함수 실행 */
+            $('#applyButton').click(function () {
+                applyBorder();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Lorem ipsum</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed nisi velit. Phasellus suscipit pellentesque leo, vel efficitur mi placerat sed. Fusce vel condimentum leo, at iaculis ante. Suspendisse posuere, dolor non tempor ullamcorper, nisl elit facilisis erat, nec lacinia augue erat id lacus. Curabitur mollis, justo nec lobortis hendrerit, libero nunc aliquam lacus, ut tristique sem nunc eu metus. Quisque varius orci eu felis sollicitudin malesuada. Vivamus pretium ligula velit, eget facilisis enim imperdiet ac.</p>
+
+    <!-- 버튼 추가 -->
+    <button id="applyButton">Apply CSS</button>
+</body>
+</html>
